@@ -1,0 +1,70 @@
+{
+  "name": "vue3-spline",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Max Baan <max@pixelastronauts.nl> (https://pixelastronauts.nl)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "dev:build": "vite build && tsc -d --emitDeclarationOnly && vue-typegen gen -s ./src -o ./dist",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint \"{packages,playground}/**/*.{ts,tsx,vue,js,jsx,html}\"",
+    "prettier": "npx prettier --write ."
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "@splinetool/runtime": "^0.9.484"
+  },
+  "peerDependencies": {
+    "vue": "^3.2"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelastronauts/vue3-spline.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "main": "dist/vue3-spline.cjs.js",
+  "module": "dist/vue3-spline.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue3-spline.es.js",
+      "require": "./dist/vue3-spline.cjs.js"
+    }
+  },
+  "devDependencies": {
+    "@babel/types": "7.23.0",
+    "@types/lodash-es": "4.17.10",
+    "@types/node": "20.8.8",
+    "@vitejs/plugin-vue": "2.3.4",
+    "@vue/compiler-sfc": "^3.3.4",
+    "typescript": "5.0.4",
+    "vite": "2.9.16",
+    "vite-plugin-css-injected-by-js": "^3.1.1",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-vue-type-imports": "^0.2.4",
+    "vue": "3.3.6",
+    "vue-tsc": "0.40.13",
+    "vue-typegen": "0.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pixelastronauts/vue3-spline/issues",
+    "email": "max@pixelastronauts.nl"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "homepage": "https://vue3-spline.vercel.app/",
+  "keywords": [
+    "vue3",
+    "spline"
+  ]
+}
